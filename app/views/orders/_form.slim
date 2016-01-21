@@ -1,0 +1,26 @@
+= form_for @order do |f|
+  = if @order.errors.any?
+    div id="error_explanation"
+      h2
+        = pluralize(@order.errors.count, "error")
+        prohibited this order from being saved:
+      ul
+        = @order.errors.full_messages.each do |msg|
+          li
+            msg
+
+
+  p
+    = f.label :first_name
+    = f.text_field :first_name
+  p
+    = f.label :last_name
+    = f.text_field :last_name
+  p
+    = f.label :address
+    = f.text_area :address
+  p
+    = f.label :email
+    = f.text_field :email
+  p
+    = f.submit

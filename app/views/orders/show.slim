@@ -1,0 +1,21 @@
+p
+  strong
+    'First name:'
+  = @order[:first_name]
+p
+  strong
+    'Last name:'
+  = @order[:last_name]
+p
+  strong
+    'Address:'
+  = @order[:address]
+p
+  strong
+    'E-mail:'
+  = @order[:email]
+
+p
+  = link_to 'Back', orders_path
+p
+  = link_to 'Edit', edit_order_path(@order)

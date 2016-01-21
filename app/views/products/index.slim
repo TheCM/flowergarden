@@ -1,0 +1,25 @@
+  h1 Listing products
+
+  p
+    =link_to 'New product', new_product_path
+
+  table
+    tr
+      th Name
+      th Price
+      th Description
+    tr
+    = @products.each do |product|
+      tr
+        td
+          = product[:name]
+        td
+          = product[:price]
+        td
+          = product[:description]
+        td
+          = link_to 'Show', product_path(product)
+        td
+          = link_to 'Edit', edit_product_path(product)
+        td
+          = link_to 'Destroy', product_path(product), method: :delete, data: { confirm: 'Are you sure?'}
