@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :orders
   resources :products
   resources :order_items
-  resources :cart
 
   get 'main_site/index'
   root 'products#index'
